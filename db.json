@@ -1,0 +1,39 @@
+{
+    "loginCredentials": [
+        {
+            "emailId": "dhavaljain@gmail.com",
+            "username": "Dhaval Jain",
+            "password": "@12345"
+        },
+        {
+            "emailId": "utkarshpatidar@gmail.com",
+            "username": "Utkarsh Patidar",
+            "password": "@12345"
+        },
+        {
+            "emailId": "aadarshjain@gmail.com",
+            "username": "Aadarsh Jain",
+            "password": "@12345"
+        },
+        {
+            "emailId": "yashkothari@gmail.com",
+            "username": "Yash Kothari",
+            "password": "@12345"
+        },
+        {
+            "emailId": "harshwardhanpathak@gmail.com",
+            "username": "Harshwardhan Pathak",
+            "password": "@12345"
+        },
+        {
+            "emailId": "aakashshelke@gmail.com",
+            "username": "Aakash Shelke",
+            "password": "@12345"
+        },
+        {
+            "emailId": "gayatrideshmukh@gmail.com",
+            "username": "Gayatri Deshmukh",
+            "password": "@12345"
+        }
+    ]
+}
