@@ -3,189 +3,205 @@ import 'package:flutter/material.dart';
 import 'homepage.dart';
 
 class Login extends StatelessWidget {
+  TextEditingController _idController = TextEditingController();
+  TextEditingController _passController = TextEditingController();
+
+  GlobalKey<FormState> formkey = GlobalKey<FormState>();
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body : Stack(
+        body: Stack(
       fit: StackFit.expand,
-        children: <Widget>[
-          Container(
-            color: Colors.black,
-            child: Align(
-              alignment: Alignment(0.0,-0.5),
-              child: Text('HuMaC',
+      children: <Widget>[
+        Container(
+          color: Colors.black,
+          child: Align(
+            alignment: Alignment(0.0, -0.5),
+            child: Text(
+              'HuMaC',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 50.0,
                 letterSpacing: 10,
                 color: Colors.amber,
-              ),),
+              ),
             ),
           ),
-          Container(
-            child: Align(
-              alignment: Alignment(0.0, -0.25),
-              child: Text('Human Machine Convergence',
-                style: TextStyle(
-                  fontSize: 25.0,
-                  color: Colors.white,
-                ),),
+        ),
+        Container(
+          child: Align(
+            alignment: Alignment(0.0, -0.25),
+            child: Text(
+              'Human Machine Convergence',
+              style: TextStyle(
+                fontSize: 25.0,
+                color: Colors.white,
+              ),
             ),
           ),
-          // Image.asset('assets/loginbackground.jpg',
-          // fit: BoxFit.cover,
-          // ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: <Widget>[
-              Stack(
-                children: [
-                  SingleChildScrollView(
-                    child: Container(
+        ),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: <Widget>[
+            Stack(
+              children: [
+                SingleChildScrollView(
 
-                      decoration: BoxDecoration(
-                          color: Colors.amber,
-                          shape: BoxShape.rectangle,
-                          borderRadius: BorderRadius.circular(20.0)
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                              vertical: 30.0,
-                              horizontal: 10.0
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.amber,
+                        shape: BoxShape.rectangle,
+                        borderRadius: BorderRadius.circular(20.0)),
+
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                              vertical: 30.0, horizontal: 10.0),
+
+                          child: TextFormField(
+                            controller: _idController,
+                            autocorrect: false,
+                            autofocus: false,
+                            style: TextStyle(
+                              fontSize: 20.0,
                             ),
-                            child: TextField(
-                              autocorrect: false,
-                              autofocus: false,
-                              style: TextStyle(
-                                fontSize: 20.0,
-                              ),
-                              decoration: InputDecoration(
-                                hintText: "Login ID",
-                                border: InputBorder.none,
-                                filled: true,
-                                fillColor: Colors.grey[200],
-                                contentPadding: EdgeInsets.all(17.0),
-                                enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.all(
-                                      Radius.circular(12.0)),
-                                  borderSide: BorderSide(
-                                      color: Colors.black, width: 2),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.all(
-                                      Radius.circular(10.0)),
-                                  borderSide: BorderSide(color: Colors.black),
+                            decoration: InputDecoration(
+                              hintText: "Login ID",
+                              prefixIcon: Padding(
+                                padding: EdgeInsets.symmetric(),
+                                child: Icon(
+                                  Icons.account_circle_outlined
                                 ),
                               ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                              //vertical: 20.0,
-                              horizontal: 10.0
-                            ),
-                            child: TextField(
-                              autocorrect: false,
-                              autofocus: false,
-                              obscureText: true,
-                              style: TextStyle(
-                                fontSize: 20.0,
-                              ),
-                              decoration: InputDecoration(
-                                hintText: "Pass Key",
-                                border: InputBorder.none,
-                                filled: true,
-                                fillColor: Colors.grey[200],
-                                contentPadding: EdgeInsets.all(17.0),
-                                enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.all(
-                                      Radius.circular(12.0)),
-                                  borderSide: BorderSide(
-                                      color: Colors.black, width: 2),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.all(
-                                      Radius.circular(10.0)),
-                                  borderSide: BorderSide(color: Colors.black),
-                                ),
+                              border: InputBorder.none,
+                              filled: true,
+                              fillColor: Colors.grey[200],
+                              contentPadding: EdgeInsets.all(17.0),
+                              enabledBorder: OutlineInputBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(12.0)),
+                                borderSide:
+                                    BorderSide(color: Colors.black, width: 2),
                               ),
                             ),
                           ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
-                            child: MaterialButton(
-                              onPressed: () {
-                                Navigator.push(
-                                    context, MaterialPageRoute(
-                                    builder: (_) => HomePage()));
-                              },
-                              minWidth: 250.0,
-                              padding: EdgeInsets.symmetric(
-                                vertical: 12.0,
-                              ),
-                              child: Text(
-                                "Forgot Pass Key ? ",
-                                style: TextStyle(
-                                  fontSize: 14.0,
-                                  color: Colors.white,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 10.0),
+                          child: TextFormField(
+                            controller: _passController,
+                            autocorrect: false,
+                            obscureText: true,
+                            autofocus: false,
+                            style: TextStyle(
+                              fontSize: 20.0,
+                            ),
+                            decoration: InputDecoration(
+                              hintText: "Pass Key",
+                              prefixIcon: Padding(
+                                padding: EdgeInsets.symmetric(),
+                                child: Icon(
+                                    Icons.lock
                                 ),
+                              ),
+                              border: InputBorder.none,
+                              filled: true,
+                              fillColor: Colors.grey[200],
+                              contentPadding: EdgeInsets.all(17.0),
+                              enabledBorder: OutlineInputBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(12.0)),
+                                borderSide:
+                                    BorderSide(color: Colors.black, width: 2),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10.0)),
+                                borderSide: BorderSide(color: Colors.black),
                               ),
                             ),
                           ),
-                          MaterialButton(
-                            onPressed: () {
-                              Navigator.push(
-                                  context, MaterialPageRoute(
-                                  builder: (_) => HomePage()));
-                            },
+                        ),
+
+                        Padding(
+                          padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
+                          child: MaterialButton(
+                            onPressed: () {},
                             minWidth: 250.0,
-                            splashColor: Colors.red[800],
-                            color: Colors.red,
                             padding: EdgeInsets.symmetric(
                               vertical: 12.0,
                             ),
                             child: Text(
-                              "Login",
-                              style: TextStyle(
-                                fontSize: 18.0,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                          MaterialButton(
-                            onPressed: () {
-                              Navigator.push(
-                                  context, MaterialPageRoute(
-                                  builder: (_) => HomePage()));
-                            },
-                            minWidth: 250.0,
-                            //splashColor: Colors.red[800],
-                            //color: Colors.red,
-                            padding: EdgeInsets.symmetric(
-                              vertical: 12.0,
-                            ),
-                            child: Text(
-                              "New User / Register ",
+                              "Forgot Pass Key ? ",
                               style: TextStyle(
                                 fontSize: 14.0,
-                                color: Colors.white,
+                                color: Colors.black,
                               ),
                             ),
                           ),
-                        ],
-                      ),
+                        ),
+                        MaterialButton(
+                          onPressed: () {
+                            if ((_idController.text.compareTo('admin') == 0) &&
+                                (_passController.text.compareTo('123456') ==
+                                    0)) //check if the username is equals to 'admin' and password equals to '123456'
+                            {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (_) => HomePage()));
+                            } // page transition to homepage
+                            else {
+                              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                  content: Text(
+                                      'Incorrect Credentials'))); // shows message of invalid credentials
+                            }
+                          },
+                          minWidth: 250.0,
+                          splashColor: Colors.red[800],
+                          color: Colors.red,
+                          padding: EdgeInsets.symmetric(
+                            vertical: 12.0,
+                          ),
+                          child: Text(
+                            "Login",
+                            style: TextStyle(
+                              fontSize: 18.0,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                        MaterialButton(
+                          onPressed: () {},
+                          minWidth: 250.0,
+                          //splashColor: Colors.red[800],
+                          //color: Colors.red,
+                          padding: EdgeInsets.symmetric(
+                            vertical: 12.0,
+                          ),
+
+                          child: Text(
+                            "New User / Register ",
+                            style: TextStyle(
+                              fontSize: 14.0,
+                              color: Colors.black,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                  )
-                ],
-              )
-            ],
-          ),
-        ],
-      )
-    );
+                  ),
+                )
+              ],
+            )
+          ],
+        ),
+      ],
+    ));
   }
 }
