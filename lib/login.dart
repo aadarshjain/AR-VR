@@ -6,7 +6,7 @@ class Login extends StatelessWidget {
   TextEditingController _idController = TextEditingController();
   TextEditingController _passController = TextEditingController();
 
-  GlobalKey<FormState> formkey = GlobalKey<FormState>();
+  //GlobalKey<FormState> formkey = GlobalKey<FormState>();
 
 
   @override
@@ -75,7 +75,8 @@ class Login extends StatelessWidget {
                               prefixIcon: Padding(
                                 padding: EdgeInsets.symmetric(),
                                 child: Icon(
-                                  Icons.account_circle_outlined
+                                  Icons.account_circle_outlined,
+                                  color: Colors.black,
                                 ),
                               ),
                               border: InputBorder.none,
@@ -107,8 +108,17 @@ class Login extends StatelessWidget {
                               prefixIcon: Padding(
                                 padding: EdgeInsets.symmetric(),
                                 child: Icon(
-                                    Icons.lock
+                                    Icons.lock,
+                                  color: Colors.black,
                                 ),
+                              ),
+
+                              suffixIcon: Padding(
+                                padding: EdgeInsets.symmetric(),
+                                  child: Icon(
+                                    Icons.security,
+                                    color: Colors.black,
+                                  ),
                               ),
                               border: InputBorder.none,
                               filled: true,
@@ -146,6 +156,7 @@ class Login extends StatelessWidget {
                             ),
                           ),
                         ),
+
                         MaterialButton(
                           onPressed: () {
                             if ((_idController.text.compareTo('admin') == 0) &&
@@ -164,8 +175,8 @@ class Login extends StatelessWidget {
                             }
                           },
                           minWidth: 250.0,
-                          splashColor: Colors.red[800],
-                          color: Colors.red,
+                          splashColor: Colors.black26,
+                          color: Colors.black,
                           padding: EdgeInsets.symmetric(
                             vertical: 12.0,
                           ),
@@ -183,7 +194,7 @@ class Login extends StatelessWidget {
                           //splashColor: Colors.red[800],
                           //color: Colors.red,
                           padding: EdgeInsets.symmetric(
-                            vertical: 12.0,
+                            vertical: 10.0,
                           ),
 
                           child: Text(
