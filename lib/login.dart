@@ -117,7 +117,7 @@ class Login extends StatelessWidget {
                                 padding: EdgeInsets.symmetric(),
                                   child: Icon(
                                     Icons.security,
-                                    color: Colors.black,
+                                    color: Colors.blueAccent,
                                   ),
                               ),
                               border: InputBorder.none,
