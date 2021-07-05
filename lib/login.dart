@@ -8,7 +8,6 @@ class Login extends StatelessWidget {
 
   //GlobalKey<FormState> formkey = GlobalKey<FormState>();
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,53 +15,56 @@ class Login extends StatelessWidget {
       fit: StackFit.expand,
       children: <Widget>[
         Container(
-          color: Colors.black,
-          child: Align(
-            alignment: Alignment(0.0, -0.5),
-            child: Text(
-              'HuMaC',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 50.0,
-                letterSpacing: 10,
-                color: Colors.amber,
-              ),
-            ),
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/loginbackground.jpg'),
+                fit: BoxFit.fill,)
           ),
+        // Container(
+        //   color: Colors.black,
+        //   child: Align(
+        //     alignment: Alignment(0.0, -0.5),
+        //     child: Text(
+        //       'HuMaC',
+        //       style: TextStyle(
+        //         fontWeight: FontWeight.bold,
+        //         fontSize: 50.0,
+        //         letterSpacing: 10,
+        //         color: Colors.amber,
+        //       ),
+        //     ),
+        //   ),
         ),
-        Container(
-          child: Align(
-            alignment: Alignment(0.0, -0.25),
-            child: Text(
-              'Human Machine Convergence',
-              style: TextStyle(
-                fontSize: 25.0,
-                color: Colors.white,
-              ),
-            ),
-          ),
-        ),
+
+        // Container(
+        //   child: Align(
+        //     alignment: Alignment(0.0, -0.25),
+        //     child: Text(
+        //       'Human Machine Convergence',
+        //       style: TextStyle(
+        //         fontSize: 25.0,
+        //         color: Colors.white,
+        //       ),
+        //     ),
+        //   ),
+        // ),
         Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
             Stack(
               children: [
                 SingleChildScrollView(
-
                   child: Container(
                     decoration: BoxDecoration(
-                        color: Colors.amber,
+                        color: Colors.black26,
                         shape: BoxShape.rectangle,
                         borderRadius: BorderRadius.circular(20.0)),
-
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-
                         Padding(
                           padding: EdgeInsets.symmetric(
                               vertical: 30.0, horizontal: 10.0),
-
                           child: TextFormField(
                             controller: _idController,
                             autocorrect: false,
@@ -89,10 +91,14 @@ class Login extends StatelessWidget {
                                 borderSide:
                                     BorderSide(color: Colors.black, width: 2),
                               ),
+                              focusedBorder: OutlineInputBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10.0)),
+                                borderSide: BorderSide(color: Colors.black),
+                              ),
                             ),
                           ),
                         ),
-
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 10.0),
                           child: TextFormField(
@@ -108,17 +114,16 @@ class Login extends StatelessWidget {
                               prefixIcon: Padding(
                                 padding: EdgeInsets.symmetric(),
                                 child: Icon(
-                                    Icons.lock,
+                                  Icons.lock,
                                   color: Colors.black,
                                 ),
                               ),
-
                               suffixIcon: Padding(
                                 padding: EdgeInsets.symmetric(),
-                                  child: Icon(
-                                    Icons.security,
-                                    color: Colors.blueAccent,
-                                  ),
+                                child: Icon(
+                                  Icons.security,
+                                  color: Colors.blueAccent,
+                                ),
                               ),
                               border: InputBorder.none,
                               filled: true,
@@ -138,7 +143,6 @@ class Login extends StatelessWidget {
                             ),
                           ),
                         ),
-
                         Padding(
                           padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
                           child: MaterialButton(
@@ -151,12 +155,11 @@ class Login extends StatelessWidget {
                               "Forgot Pass Key ? ",
                               style: TextStyle(
                                 fontSize: 14.0,
-                                color: Colors.black,
+                                color: Colors.white,
                               ),
                             ),
                           ),
                         ),
-
                         MaterialButton(
                           onPressed: () {
                             if ((_idController.text.compareTo('admin') == 0) &&
@@ -176,7 +179,7 @@ class Login extends StatelessWidget {
                           },
                           minWidth: 250.0,
                           splashColor: Colors.black26,
-                          color: Colors.black,
+                          color: Colors.amber,
                           padding: EdgeInsets.symmetric(
                             vertical: 12.0,
                           ),
@@ -201,7 +204,7 @@ class Login extends StatelessWidget {
                             "New User / Register ",
                             style: TextStyle(
                               fontSize: 14.0,
-                              color: Colors.black,
+                              color: Colors.white,
                             ),
                           ),
                         ),

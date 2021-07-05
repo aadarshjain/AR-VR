@@ -5,9 +5,7 @@ import 'lablespage.dart';
 
 
 class HomePage extends StatefulWidget{
-
   //final String title;
-
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -21,109 +19,90 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text(
           'HuMaC_EIE',
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,
-        backgroundColor: Colors.amber,
+        backgroundColor: Colors.black,
       ),
       body:
       Stack(
         fit: StackFit.expand,
         children: [
           Container(
-            constraints: BoxConstraints.expand(),
-            padding:EdgeInsets.all(0.0),
-            margin:EdgeInsets.all(0.0),
-            //width: double.infinity,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image:AssetImage('assets/apple.jpg'),
-                fit: BoxFit.cover,
+              constraints: BoxConstraints.expand(),
+              //width: double.infinity,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image:AssetImage('assets/homepagebackground1.jpg'),
+                  fit: BoxFit.cover,
+                ),
               ),
-            ),
-          //),
-          child :Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                child: Align(
-                  alignment: Alignment(-0.4, 0.0),
-                  child: ClipOval(
-                    child: Material(
-                      color: Colors.lightGreen,
-                      child: InkWell(
-                        //splashColor: Colors.amberAccent,
-                        onTap: () async {
-                          File _image;
-                          final image = await ImagePicker.platform.pickImage(
-                              source: ImageSource.camera);
+              //),
+              child :Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                //crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
 
-                          setState(() {
-                            _image = image as File;
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => LabelsPage(image : _image)));
-                          });
+                  SizedBox(
+                    height: 64.0,
+                  ),
+                  Container(
+                    child: Align(
+                      alignment: Alignment(0.88, 3.3),
+                      child: ClipOval(
+                        child: Material(
+                          color: Colors.amber,
+                          child: InkWell(
+                            //splashColor: Colors.amberAccent,
+                            onTap: () async {
+                              File _image;
+                              final image = await ImagePicker.platform.pickImage(
+                                  source: ImageSource.camera);
 
-                          //var _image = _image;
-                          //Navigator.push(context, MaterialPageRoute(builder: (context) => LabelsPage(image : _image)));
-                        },
+                              setState(() {
+                                _image = image as File;
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => LabelsPage(image : _image)));
+                              });
 
-                        child: SizedBox(
-                            width: 60,
-                            height: 60,
-                            child: Icon(Icons.add_a_photo_outlined,
-                            color: Colors.yellow)),
+                              //var _image = _image;
+                              //Navigator.push(context, MaterialPageRoute(builder: (context) => LabelsPage(image : _image)));
+                            },
+
+                            child: SizedBox(
+                                width: 70,
+                                height: 70,
+                                child: Icon(Icons.add_a_photo_outlined,
+                                    color: Colors.black)),
+                          ),
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ),
-              SizedBox(
-                height: 100.0,
-              ),
-              Container(
-                child: Align(
-                  alignment: Alignment.center,
-                  child: ClipOval(
-                    child: Material(
-                      color: Colors.brown,
-                      child: InkWell(
-                        //splashColor: Colors.amberAccent,
-                        onTap: () {},
-                        child: SizedBox(
-                            width: 60,
-                            height: 60,
-                            child: Icon(Icons.bluetooth,
-                            color: Colors.yellow,)),
+                  SizedBox(
+                    height: 40.0,
+                  ),
+
+                  Container(
+                    child: Align(
+                      alignment: Alignment(0.99, -0.3),
+                      child: ClipOval(
+                        child: Material(
+                          color: Colors.amber,
+                          child: InkWell(
+                            //splashColor: Colors.amberAccent,
+                            onTap: () {},
+                            child: SizedBox(
+                                width: 70,
+                                height: 70,
+                                child: Icon(Icons.document_scanner_outlined,
+                                  color: Colors.black,)),
+                          ),
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ),
-              SizedBox(
-                height: 100.0,
-              ),
-              Container(
-                child: Align(
-                  alignment: Alignment(0.4, 0.0),
-                  child: ClipOval(
-                    child: Material(
-                      color: Colors.blueAccent,
-                      child: InkWell(
-                        //splashColor: Colors.amberAccent,
-                        onTap: () {},
-                        child: SizedBox(
-                            width: 60,
-                            height: 60,
-                            child: Icon(Icons.document_scanner_outlined,
-                            color: Colors.yellow,)),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          )
+                ],
+              )
           ),
         ],
       ),
