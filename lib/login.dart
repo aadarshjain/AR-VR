@@ -56,7 +56,7 @@ class Login extends StatelessWidget {
                 SingleChildScrollView(
                   child: Container(
                     decoration: BoxDecoration(
-                        color: Colors.black26,
+                        color: Colors.black,
                         shape: BoxShape.rectangle,
                         borderRadius: BorderRadius.circular(20.0)),
                     child: Column(
@@ -78,7 +78,7 @@ class Login extends StatelessWidget {
                                 padding: EdgeInsets.symmetric(),
                                 child: Icon(
                                   Icons.account_circle_outlined,
-                                  color: Colors.black,
+                                  color: Colors.blue,
                                 ),
                               ),
                               border: InputBorder.none,
@@ -115,7 +115,7 @@ class Login extends StatelessWidget {
                                 padding: EdgeInsets.symmetric(),
                                 child: Icon(
                                   Icons.lock,
-                                  color: Colors.black,
+                                  color: Colors.blue,
                                 ),
                               ),
                               suffixIcon: Padding(
@@ -160,36 +160,51 @@ class Login extends StatelessWidget {
                             ),
                           ),
                         ),
-                        MaterialButton(
-                          onPressed: () {
-                            if ((_idController.text.compareTo('admin') == 0) &&
-                                (_passController.text.compareTo('123456') ==
-                                    0)) //check if the username is equals to 'admin' and password equals to '123456'
-                            {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (_) => HomePage()));
-                            } // page transition to homepage
-                            else {
-                              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                                  content: Text(
-                                      'Incorrect Credentials'))); // shows message of invalid credentials
-                            }
-                          },
-                          minWidth: 250.0,
-                          splashColor: Colors.black26,
-                          color: Colors.amber,
-                          padding: EdgeInsets.symmetric(
-                            vertical: 12.0,
-                          ),
-                          child: Text(
-                            "Login",
-                            style: TextStyle(
-                              fontSize: 18.0,
-                              color: Colors.white,
+                        Row(
+                          children: [
+                            Padding(padding: EdgeInsets.only(left: 20, right: 20),
+                              child: Container(
+                                height: 50,
+                                width: 50,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      image: AssetImage('assets/logo.png'),
+                                      fit: BoxFit.fill,)
+                                ),
+                              ),
                             ),
-                          ),
+                          MaterialButton(
+                              onPressed: () {
+                                if ((_idController.text.compareTo('admin') == 0) &&
+                                    (_passController.text.compareTo('123456') ==
+                                        0)) //check if the username is equals to 'admin' and password equals to '123456'
+                                    {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (_) => HomePage()));
+                                } // page transition to homepage
+                                else {
+                                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                      content: Text(
+                                          'Incorrect Credentials'))); // shows message of invalid credentials
+                                }
+                              },
+                              minWidth: 250.0,
+                              splashColor: Colors.black26,
+                              color: Colors.blue,
+                              padding: EdgeInsets.symmetric(
+                                vertical: 12.0,
+                              ),
+                              child: Text(
+                                "Login",
+                                style: TextStyle(
+                                  fontSize: 18.0,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                         MaterialButton(
                           onPressed: () {},
@@ -197,7 +212,7 @@ class Login extends StatelessWidget {
                           //splashColor: Colors.red[800],
                           //color: Colors.red,
                           padding: EdgeInsets.symmetric(
-                            vertical: 10.0,
+                            vertical: 20.0,
                           ),
 
                           child: Text(
@@ -207,6 +222,9 @@ class Login extends StatelessWidget {
                               color: Colors.white,
                             ),
                           ),
+                        ),
+                        SizedBox(
+                          height: 40,
                         ),
                       ],
                     ),
