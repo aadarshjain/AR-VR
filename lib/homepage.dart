@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:humac/camerapage.dart';
 import 'package:image_picker/image_picker.dart';
 import 'lablespage.dart';
+import 'login.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -16,20 +17,30 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.black,
-        appBar: AppBar(
-          title: Text(
-            'HuMaC_EIE',
-            style: TextStyle(color: Colors.white),
-          ),
-          centerTitle: true,
-          backgroundColor: Colors.black,
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+        title: Text(
+          'HuMaC_EIE',
+          style: TextStyle(color: Colors.white),
         ),
-        body:
-        Stack(
-          fit: StackFit.expand,
-          children: [
-            Container(
+        centerTitle: true,
+        backgroundColor: Colors.black,
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (
+                  context) => Login()));
+            },
+            child: Text('Log Out'),
+
+          ),
+        ],
+      ),
+      body:
+      Stack(
+        fit: StackFit.expand,
+        children: [
+          Container(
               constraints: BoxConstraints.expand(),
               //width: double.infinity,
               decoration: BoxDecoration(
@@ -43,75 +54,76 @@ class _HomePageState extends State<HomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 //crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  
 
-                SizedBox(
-                height: 64.0,
-              ),
-              Container(
-                child: Align(
-                  alignment: Alignment(0.88, 3.3),
-                  child: ClipOval(
-                    child: Material(
-                      color: Colors.amber,
-                      child: InkWell(
-                        //splashColor: Colors.amberAccent,
-                          onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (
-                                context) => camerapage()));
-                          },
-                      // async {
-                      //   File _image;
-                      //   final image = await ImagePicker.platform.pickImage(
-                      //       source: ImageSource.camera);
-                      //
-                      //   setState(() {
-                      //     _image = image as File;
-                      //     Navigator.push(context, MaterialPageRoute(builder: (context) => LabelsPage(image : _image)));
-                      //   });
+                  SizedBox(
+                    height: 64.0,
+                  ),
+                  Container(
+                    child: Align(
+                      alignment: Alignment(0.88, 3.3),
+                      child: ClipOval(
+                        child: Material(
+                          color: Colors.amber,
+                          child: InkWell(
+                            //splashColor: Colors.amberAccent,
+                            onTap: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (
+                                  context) => camerapage()));
+                            },
+                            // async {
+                            //   File _image;
+                            //   final image = await ImagePicker.platform.pickImage(
+                            //       source: ImageSource.camera);
+                            //
+                            //   setState(() {
+                            //     _image = image as File;
+                            //     Navigator.push(context, MaterialPageRoute(builder: (context) => LabelsPage(image : _image)));
+                            //   });
 
-                      //var _image = _image;
-                      //Navigator.push(context, MaterialPageRoute(builder: (context) => LabelsPage(image : _image)));
-                      //},
+                            //var _image = _image;
+                            //Navigator.push(context, MaterialPageRoute(builder: (context) => LabelsPage(image : _image)));
+                            //},
 
-                      child: SizedBox(
-                          width: 70,
-                          height: 70,
-                          child: Icon(Icons.add_a_photo_outlined,
-                              color: Colors.black)),
+                            child: SizedBox(
+                                width: 70,
+                                height: 70,
+                                child: Icon(Icons.add_a_photo_outlined,
+                                    color: Colors.black)),
+                          ),
+                        ),
+                      ),
                     ),
                   ),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 40.0,
-            ),
+                  SizedBox(
+                    height: 40.0,
+                  ),
 
-            Container(
-              child: Align(
-                alignment: Alignment(0.99, -0.3),
-                child: ClipOval(
-                  child: Material(
-                    color: Colors.amber,
-                    child: InkWell(
-                      //splashColor: Colors.amberAccent,
-                      onTap: () {},
-                      child: SizedBox(
-                          width: 70,
-                          height: 70,
-                          child: Icon(Icons.document_scanner_outlined,
-                            color: Colors.black,)),
+                  Container(
+                    child: Align(
+                      alignment: Alignment(0.99, -0.3),
+                      child: ClipOval(
+                        child: Material(
+                          color: Colors.amber,
+                          child: InkWell(
+                            //splashColor: Colors.amberAccent,
+                            onTap: () {},
+                            child: SizedBox(
+                                width: 70,
+                                height: 70,
+                                child: Icon(Icons.document_scanner_outlined,
+                                  color: Colors.black,)),
+                          ),
+                        ),
+                      ),
                     ),
                   ),
-                ),
-              ),
-            ),
-          ],
-        )
-    ),]
-    ,
-    )
-    ,
+                ],
+              )
+          ),]
+        ,
+      )
+      ,
     );
   }
 }
