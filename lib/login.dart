@@ -56,8 +56,7 @@ class Login extends StatelessWidget {
                 SingleChildScrollView(
                   child: Container(
                     decoration: BoxDecoration(
-                        color: Colors.black,
-                        shape: BoxShape.rectangle,
+                        color: Colors.transparent,
                         borderRadius: BorderRadius.circular(20.0)),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
