@@ -31,7 +31,7 @@ class _HomePageState extends State<HomePage> {
               Navigator.push(context, MaterialPageRoute(builder: (
                   context) => Login()));
             },
-            child: Text('Log Out'),
+            child: Text('Log Out', style: TextStyle(color: Colors.amber)),
 
           ),
         ],
