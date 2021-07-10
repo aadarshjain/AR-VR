@@ -45,23 +45,23 @@ class _HomePageState extends State<HomePage> {
               //width: double.infinity,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/homepagebackground1.jpg'),
+                  image: AssetImage('assets/homepagebackground.png'),
                   fit: BoxFit.cover,
                 ),
               ),
               //),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
                 //crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   
 
                   SizedBox(
-                    height: 64.0,
+                    height: 216.0,
                   ),
                   Container(
                     child: Align(
-                      alignment: Alignment(0.88, 3.3),
+                      alignment: Alignment(0.75, 0.0),
                       child: ClipOval(
                         child: Material(
                           color: Colors.amber,
@@ -84,8 +84,8 @@ class _HomePageState extends State<HomePage> {
 
 
                             child: SizedBox(
-                                width: 70,
-                                height: 70,
+                                width: 65,
+                                height: 65,
                                 child: Icon(Icons.add_a_photo_outlined,
                                     color: Colors.black)),
                           ),
@@ -94,12 +94,12 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   SizedBox(
-                    height: 40.0,
+                    height: 25.0,
                   ),
 
                   Container(
                     child: Align(
-                      alignment: Alignment(0.99, -0.3),
+                      alignment: Alignment(0.85, 0.0),
                       child: ClipOval(
                         child: Material(
                           color: Colors.amber,
@@ -107,8 +107,8 @@ class _HomePageState extends State<HomePage> {
                             //splashColor: Colors.amberAccent,
                             onTap: () {},
                             child: SizedBox(
-                                width: 70,
-                                height: 70,
+                                width: 65,
+                                height: 65,
                                 child: Icon(Icons.document_scanner_outlined,
                                   color: Colors.black,)),
                           ),

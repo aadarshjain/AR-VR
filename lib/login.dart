@@ -18,7 +18,7 @@ class Login extends StatelessWidget {
           decoration: BoxDecoration(
               image: DecorationImage(
             image: AssetImage('assets/loginbackground.png'),
-            fit: BoxFit.fill,
+            fit: BoxFit.cover,
           )),
           // Container(
           //   color: Colors.black,
