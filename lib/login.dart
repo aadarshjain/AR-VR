@@ -17,23 +17,23 @@ class Login extends StatelessWidget {
         Container(
           decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/loginbackground.png'),
-                fit: BoxFit.fill,)
-          ),
-        // Container(
-        //   color: Colors.black,
-        //   child: Align(
-        //     alignment: Alignment(0.0, -0.5),
-        //     child: Text(
-        //       'HuMaC',
-        //       style: TextStyle(
-        //         fontWeight: FontWeight.bold,
-        //         fontSize: 50.0,
-        //         letterSpacing: 10,
-        //         color: Colors.amber,
-        //       ),
-        //     ),
-        //   ),
+            image: AssetImage('assets/loginbackground.png'),
+            fit: BoxFit.fill,
+          )),
+          // Container(
+          //   color: Colors.black,
+          //   child: Align(
+          //     alignment: Alignment(0.0, -0.5),
+          //     child: Text(
+          //       'HuMaC',
+          //       style: TextStyle(
+          //         fontWeight: FontWeight.bold,
+          //         fontSize: 50.0,
+          //         letterSpacing: 10,
+          //         color: Colors.amber,
+          //       ),
+          //     ),
+          //   ),
         ),
 
         // Container(
@@ -69,6 +69,7 @@ class Login extends StatelessWidget {
                             autocorrect: false,
                             autofocus: false,
                             style: TextStyle(
+                              color: Colors.white,
                               fontSize: 20.0,
                             ),
                             decoration: InputDecoration(
@@ -78,7 +79,7 @@ class Login extends StatelessWidget {
                                 padding: EdgeInsets.symmetric(),
                                 child: Icon(
                                   Icons.account_circle_outlined,
-                                  color: Colors.blue,
+                                  color: Colors.amber,
                                 ),
                               ),
                               border: InputBorder.none,
@@ -107,6 +108,7 @@ class Login extends StatelessWidget {
                             obscureText: true,
                             autofocus: false,
                             style: TextStyle(
+                              color: Colors.white,
                               fontSize: 20.0,
                             ),
                             decoration: InputDecoration(
@@ -116,14 +118,14 @@ class Login extends StatelessWidget {
                                 padding: EdgeInsets.symmetric(),
                                 child: Icon(
                                   Icons.lock,
-                                  color: Colors.blue,
+                                  color: Colors.amber,
                                 ),
                               ),
                               suffixIcon: Padding(
                                 padding: EdgeInsets.symmetric(),
                                 child: Icon(
                                   Icons.security,
-                                  color: Colors.blueAccent,
+                                  color: Colors.amber,
                                 ),
                               ),
                               border: InputBorder.none,
@@ -163,37 +165,40 @@ class Login extends StatelessWidget {
                         ),
                         Row(
                           children: [
-                            Padding(padding: EdgeInsets.only(left: 20, right: 20),
+                            Padding(
+                              padding: EdgeInsets.only(left: 20, right: 20),
                               child: Container(
                                 height: 50,
                                 width: 50,
                                 decoration: BoxDecoration(
                                     image: DecorationImage(
-                                      image: AssetImage('assets/logo.png'),
-                                      fit: BoxFit.fill,)
-                                ),
+                                  image: AssetImage('assets/logo.png'),
+                                  fit: BoxFit.fill,
+                                )),
                               ),
                             ),
-                          MaterialButton(
+                            MaterialButton(
                               onPressed: () {
-                                if ((_idController.text.compareTo('admin') == 0) &&
+                                if ((_idController.text.compareTo('admin') ==
+                                        0) &&
                                     (_passController.text.compareTo('123456') ==
                                         0)) //check if the username is equals to 'admin' and password equals to '123456'
-                                    {
+                                {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
                                           builder: (_) => HomePage()));
                                 } // page transition to homepage
                                 else {
-                                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                                      content: Text(
-                                          'Incorrect Credentials'))); // shows message of invalid credentials
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                          content: Text(
+                                              'Incorrect Credentials'))); // shows message of invalid credentials
                                 }
                               },
                               minWidth: 250.0,
                               splashColor: Colors.black26,
-                              color: Colors.blue,
+                              color: Colors.blueAccent,
                               padding: EdgeInsets.symmetric(
                                 vertical: 12.0,
                               ),
