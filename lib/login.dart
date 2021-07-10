@@ -17,7 +17,7 @@ class Login extends StatelessWidget {
         Container(
           decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/loginbackground.jpg'),
+                image: AssetImage('assets/loginbackground.png'),
                 fit: BoxFit.fill,)
           ),
         // Container(
@@ -73,6 +73,7 @@ class Login extends StatelessWidget {
                             ),
                             decoration: InputDecoration(
                               hintText: "Login ID",
+                              hintStyle: TextStyle(color: Colors.white),
                               prefixIcon: Padding(
                                 padding: EdgeInsets.symmetric(),
                                 child: Icon(
@@ -82,7 +83,7 @@ class Login extends StatelessWidget {
                               ),
                               border: InputBorder.none,
                               filled: true,
-                              fillColor: Colors.grey[200],
+                              fillColor: Colors.transparent,
                               contentPadding: EdgeInsets.all(17.0),
                               enabledBorder: OutlineInputBorder(
                                 borderRadius:
@@ -110,6 +111,7 @@ class Login extends StatelessWidget {
                             ),
                             decoration: InputDecoration(
                               hintText: "Pass Key",
+                              hintStyle: TextStyle(color: Colors.white),
                               prefixIcon: Padding(
                                 padding: EdgeInsets.symmetric(),
                                 child: Icon(
@@ -126,7 +128,7 @@ class Login extends StatelessWidget {
                               ),
                               border: InputBorder.none,
                               filled: true,
-                              fillColor: Colors.grey[200],
+                              fillColor: Colors.transparent,
                               contentPadding: EdgeInsets.all(17.0),
                               enabledBorder: OutlineInputBorder(
                                 borderRadius:

@@ -66,24 +66,22 @@ class _HomePageState extends State<HomePage> {
                         child: Material(
                           color: Colors.amber,
                           child: InkWell(
-                            //splashColor: Colors.amberAccent,
-                            onTap: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (
-                                  context) => camerapage()));
-                            },
-                            // async {
-                            //   File _image;
-                            //   final image = await ImagePicker.platform.pickImage(
-                            //       source: ImageSource.camera);
-                            //
-                            //   setState(() {
-                            //     _image = image as File;
-                            //     Navigator.push(context, MaterialPageRoute(builder: (context) => LabelsPage(image : _image)));
-                            //   });
+                            splashColor: Colors.amberAccent,
+                            onTap: ()
+                            async {
+                              File _image;
+                              final image = await ImagePicker.platform
+                                  .pickImage(
+                                  source: ImageSource.camera);
 
-                            //var _image = _image;
-                            //Navigator.push(context, MaterialPageRoute(builder: (context) => LabelsPage(image : _image)));
-                            //},
+                              setState(() {
+                                _image = image as File;
+                                Navigator.push(context, MaterialPageRoute(
+                                    builder: (context) =>
+                                        LabelsPage(image: _image)));
+                              });
+                            },
+
 
                             child: SizedBox(
                                 width: 70,
