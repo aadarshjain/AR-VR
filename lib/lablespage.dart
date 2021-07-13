@@ -1,3 +1,6 @@
+import 'dart:ffi';
+import 'dart:ui';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -16,9 +19,20 @@ class LabelsPage extends StatelessWidget {
     title: Text('Labels Page'),
     ),
 
-      body: Center(
-
-          child: image == null ? Text("Image is not loaded") : Image.file(image)
+      body: Container(
+        decoration: BoxDecoration(
+          color: Colors.blueAccent,
+          image: DecorationImage(
+            image: FileImage(image),
+            fit: BoxFit.fill,
+          ),
+        ),
+        child: new BackdropFilter(
+          filter: new ImageFilter.blur(sigmaX: 1.5, sigmaY: 1.5),
+          child: new Container(
+            decoration: new BoxDecoration(color: Colors.black26.withOpacity(0.3)),
+          ),
+        ),
       ),
     );
   }

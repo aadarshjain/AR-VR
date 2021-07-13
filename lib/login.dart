@@ -6,8 +6,6 @@ class Login extends StatelessWidget {
   TextEditingController _idController = TextEditingController();
   TextEditingController _passController = TextEditingController();
 
-  //GlobalKey<FormState> formkey = GlobalKey<FormState>();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,8 +92,8 @@ class Login extends StatelessWidget {
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(10.0)),
-                                borderSide: BorderSide(color: Colors.black),
+                                    BorderRadius.all(Radius.circular(12.0)),
+                                borderSide: BorderSide(color: Colors.black, width: 2),
                               ),
                             ),
                           ),
@@ -124,9 +122,10 @@ class Login extends StatelessWidget {
                               suffixIcon: Padding(
                                 padding: EdgeInsets.symmetric(),
                                 child: Icon(
-                                  Icons.security,
-                                  color: Colors.amber,
-                                ),
+                                    Icons.security,
+                                    color: Colors.amber,
+                                  ),
+
                               ),
                               border: InputBorder.none,
                               filled: true,
@@ -141,7 +140,7 @@ class Login extends StatelessWidget {
                               focusedBorder: OutlineInputBorder(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(10.0)),
-                                borderSide: BorderSide(color: Colors.black),
+                                borderSide: BorderSide(color: Colors.black, width: 2),
                               ),
                             ),
                           ),

@@ -5,15 +5,15 @@ import 'package:image_picker/image_picker.dart';
 import 'lablespage.dart';
 import 'login.dart';
 
-
 class HomePage extends StatefulWidget {
   //final String title;
   @override
   _HomePageState createState() => _HomePageState();
 }
 
-
 class _HomePageState extends State<HomePage> {
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,16 +28,14 @@ class _HomePageState extends State<HomePage> {
         actions: [
           TextButton(
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (
-                  context) => Login()));
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Login()));
             },
             child: Text('Log Out', style: TextStyle(color: Colors.amber)),
-
           ),
         ],
       ),
-      body:
-      Stack(
+      body: Stack(
         fit: StackFit.expand,
         children: [
           Container(
@@ -54,8 +52,6 @@ class _HomePageState extends State<HomePage> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 //crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  
-
                   SizedBox(
                     height: 216.0,
                   ),
@@ -68,20 +64,26 @@ class _HomePageState extends State<HomePage> {
                           child: InkWell(
                             splashColor: Colors.amberAccent,
                             onTap: ()
+                            // {
+                            //   Navigator.push(
+                            //       context,
+                            //       MaterialPageRoute(
+                            //           builder: (context) => camerapage()));
+                            // },
                             async {
                               File _image;
                               final image = await ImagePicker.platform
                                   .pickImage(
                                   source: ImageSource.camera);
 
-                              setState(() {
-                                _image = image as File;
+                              this.setState(() {
+                                _image = File(image!.path);
                                 Navigator.push(context, MaterialPageRoute(
                                     builder: (context) =>
                                         LabelsPage(image: _image)));
                               });
-                            },
 
+                            },
 
                             child: SizedBox(
                                 width: 65,
@@ -96,7 +98,6 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(
                     height: 25.0,
                   ),
-
                   Container(
                     child: Align(
                       alignment: Alignment(0.85, 0.0),
@@ -109,19 +110,19 @@ class _HomePageState extends State<HomePage> {
                             child: SizedBox(
                                 width: 65,
                                 height: 65,
-                                child: Icon(Icons.document_scanner_outlined,
-                                  color: Colors.black,)),
+                                child: Icon(
+                                  Icons.document_scanner_outlined,
+                                  color: Colors.black,
+                                )),
                           ),
                         ),
                       ),
                     ),
                   ),
                 ],
-              )
-          ),]
-        ,
-      )
-      ,
+              )),
+        ],
+      ),
     );
   }
 }
