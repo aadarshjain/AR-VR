@@ -28,8 +28,7 @@ class _HomePageState extends State<HomePage> {
         actions: [
           TextButton(
             onPressed: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Login()));
+              Navigator.pop(context);
             },
             child: Text('Log Out', style: TextStyle(color: Colors.amber)),
           ),
