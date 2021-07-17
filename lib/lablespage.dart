@@ -46,9 +46,9 @@ class LabelsPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    const Button(),
-                    const Button(),
-                    const Button(),
+                    const Button1(),
+                    const Button2(),
+                    const Button3(),
                   ],
                 ),
               ],
@@ -60,8 +60,8 @@ class LabelsPage extends StatelessWidget {
   }
 }
 
-class Button extends StatelessWidget {
-  const Button({Key? key}) : super(key: key);
+class Button1 extends StatelessWidget {
+  const Button1({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +74,72 @@ class Button extends StatelessWidget {
         boxShadow: [BoxShadow(color: Colors.transparent, blurRadius: 5)],
       ),
       child: GestureDetector(
-        child: const Center(child: Text('Label', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),)),
+        child: const Center(child: Text('Label 1', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),)),
+        onTap: () {
+          showPopover(
+            context: context,
+            transitionDuration: const Duration(milliseconds: 150),
+            bodyBuilder: (context) => const ListItems(),
+            onPop: () => print('Popover was popped!'),
+            direction: PopoverDirection.bottom,
+            width: 200,
+            height: 400,
+            arrowHeight: 15,
+            arrowWidth: 30,
+          );
+        },
+      ),
+    );
+  }
+}
+class Button2 extends StatelessWidget {
+  const Button2({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 80,
+      height: 40,
+      decoration: const BoxDecoration(
+        color: Colors.amber,
+        borderRadius: BorderRadius.all(Radius.circular(5)),
+        boxShadow: [BoxShadow(color: Colors.transparent, blurRadius: 5)],
+      ),
+      child: GestureDetector(
+        child: const Center(child: Text('Label 2', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),)),
+        onTap: () {
+          showPopover(
+            context: context,
+            transitionDuration: const Duration(milliseconds: 150),
+            bodyBuilder: (context) => const ListItems(),
+            onPop: () => print('Popover was popped!'),
+            direction: PopoverDirection.bottom,
+            width: 200,
+            height: 400,
+            arrowHeight: 15,
+            arrowWidth: 30,
+          );
+        },
+      ),
+    );
+  }
+}
+
+class Button3 extends StatelessWidget {
+  const Button3({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 80,
+      height: 40,
+      decoration: const BoxDecoration(
+        color: Colors.amber,
+        borderRadius: BorderRadius.all(Radius.circular(5)),
+        boxShadow: [BoxShadow(color: Colors.transparent, blurRadius: 5)],
+      ),
+      child: GestureDetector(
+        child: const Center(child: Text('Label 3', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),)),
         onTap: () {
           showPopover(
             context: context,
