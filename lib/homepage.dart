@@ -26,14 +26,14 @@ class _HomePageState extends State<HomePage> {
         ),
         centerTitle: true,
         backgroundColor: Colors.black,
-        actions: [
-          TextButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: Text('Log Out', style: TextStyle(color: Colors.amber)),
-          ),
-        ],
+        // actions: [
+        //   TextButton(
+        //     onPressed: () {
+        //       Navigator.pop(context);
+        //     },
+        //     child: Text('Log Out', style: TextStyle(color: Colors.amber)),
+        //   ),
+        // ],
       ),
       body: Stack(
         fit: StackFit.expand,
