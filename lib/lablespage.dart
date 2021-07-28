@@ -46,9 +46,9 @@ class LabelsPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    const Button(),
-                    const Button(),
-                    const Button(),
+                    const Button1(),
+                    const Button2(),
+                    const Button3(),
                   ],
                 ),
               ],
@@ -60,8 +60,8 @@ class LabelsPage extends StatelessWidget {
   }
 }
 
-class Button extends StatelessWidget {
-  const Button({Key? key}) : super(key: key);
+class Button1 extends StatelessWidget {
+  const Button1({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +74,7 @@ class Button extends StatelessWidget {
         boxShadow: [BoxShadow(color: Colors.transparent, blurRadius: 5)],
       ),
       child: GestureDetector(
-        child: const Center(child: Text('Label', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),)),
+        child: const Center(child: Text('Label 1', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),)),
         onTap: () {
           showPopover(
             context: context,
@@ -86,6 +86,74 @@ class Button extends StatelessWidget {
             height: 400,
             arrowHeight: 15,
             arrowWidth: 30,
+            backgroundColor: Colors.transparent,
+          );
+        },
+      ),
+    );
+  }
+}
+class Button2 extends StatelessWidget {
+  const Button2({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 80,
+      height: 40,
+      decoration: const BoxDecoration(
+        color: Colors.amber,
+        borderRadius: BorderRadius.all(Radius.circular(5)),
+        boxShadow: [BoxShadow(color: Colors.transparent, blurRadius: 5)],
+      ),
+      child: GestureDetector(
+        child: const Center(child: Text('Label 2', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),)),
+        onTap: () {
+          showPopover(
+            context: context,
+            transitionDuration: const Duration(milliseconds: 150),
+            bodyBuilder: (context) => const ListItems(),
+            onPop: () => print('Popover was popped!'),
+            direction: PopoverDirection.bottom,
+            width: 200,
+            height: 400,
+            arrowHeight: 15,
+            arrowWidth: 30,
+            backgroundColor: Colors.transparent,
+          );
+        },
+      ),
+    );
+  }
+}
+
+class Button3 extends StatelessWidget {
+  const Button3({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 80,
+      height: 40,
+      decoration: const BoxDecoration(
+        color: Colors.amber,
+        borderRadius: BorderRadius.all(Radius.circular(5)),
+        boxShadow: [BoxShadow(color: Colors.transparent, blurRadius: 5)],
+      ),
+      child: GestureDetector(
+        child: const Center(child: Text('Label 3', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),)),
+        onTap: () {
+          showPopover(
+            context: context,
+            transitionDuration: const Duration(milliseconds: 150),
+            bodyBuilder: (context) => const ListItems(),
+            onPop: () => print('Popover was popped!'),
+            direction: PopoverDirection.bottom,
+            width: 200,
+            height: 400,
+            arrowHeight: 15,
+            arrowWidth: 30,
+            backgroundColor: Colors.transparent,
           );
         },
       ),
@@ -116,33 +184,33 @@ class ListItems extends StatelessWidget {
               },
               child: Container(
                 height: 50,
-                color: Colors.black,
-                child: const Center(child: Text('Machine Stats', style: TextStyle(color: Colors.amber),)),
+                color: Colors.grey[700],
+                child: const Center(child: Text('Machine Stats', style: TextStyle(color: Colors.amber, fontWeight: FontWeight.bold),)),
               ),
             ),
-            const Divider(thickness: 20, color: Colors.white),
+            const Divider(thickness: 20, color: Colors.transparent),
             Container(
               height: 50,
-              color: Colors.black,
-              child: const Center(child: Text('Total Uptime : 23.5 minutes', style: TextStyle(color: Colors.amber),)),
+              color: Colors.grey[700],
+              child: const Center(child: Text('Total Uptime : 23.5 minutes', style: TextStyle(color: Colors.amber, fontWeight: FontWeight.bold),)),
             ),
             const Divider(),
             Container(
               height: 50,
-              color: Colors.black,
-              child: const Center(child: Text('Total Downtime : 0', style: TextStyle(color: Colors.amber),)),
+              color: Colors.grey[700],
+              child: const Center(child: Text('Total Downtime : 0', style: TextStyle(color: Colors.amber, fontWeight: FontWeight.bold),)),
             ),
             const Divider(),
             Container(
               height: 50,
-              color: Colors.black,
-              child: const Center(child: Text('Last Maint : 15-07-2021', style: TextStyle(color: Colors.amber),)),
+              color: Colors.grey[700],
+              child: const Center(child: Text('Last Maint : 15-07-2021', style: TextStyle(color: Colors.amber, fontWeight: FontWeight.bold),)),
             ),
             const Divider(),
             Container(
               height: 50,
-              color: Colors.black,
-              child: const Center(child: Text('Addition Info.', style: TextStyle(color: Colors.amber),)),
+              color: Colors.grey[700],
+              child: const Center(child: Text('Addition Info.', style: TextStyle(color: Colors.amber, fontWeight: FontWeight.bold),)),
             ),
           ],
         ),

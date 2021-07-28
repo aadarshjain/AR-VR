@@ -1,9 +1,10 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:humac/camerapage.dart';
+// ignore: import_of_legacy_library_into_null_safe
+import 'package:humac/bluetooth.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:system_settings/system_settings.dart';
 import 'lablespage.dart';
-import 'login.dart';
 
 class HomePage extends StatefulWidget {
   //final String title;
@@ -111,6 +112,30 @@ class _HomePageState extends State<HomePage> {
                                 height: 65,
                                 child: Icon(
                                   Icons.document_scanner_outlined,
+                                  color: Colors.black,
+                                )),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 25.0,
+                  ),
+                  Container(
+                    child: Align(
+                      alignment: Alignment(0.55, 0.0),
+                      child: ClipOval(
+                        child: Material(
+                          color: Colors.amber,
+                          child: InkWell(
+                            //splashColor: Colors.amberAccent,
+                            onTap: () => SystemSettings.bluetooth(),
+                            child: SizedBox(
+                                width: 65,
+                                height: 65,
+                                child: Icon(
+                                  Icons.bluetooth,
                                   color: Colors.black,
                                 )),
                           ),
