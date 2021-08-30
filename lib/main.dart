@@ -9,7 +9,7 @@ import 'login.dart';
 // }
 void main() {
   //WidgetsFlutterBinding.ensureInitialized();   SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft]).then((_){
-    runApp(MaterialApp(debugShowCheckedModeBanner: false, home: HomePage()));
+    runApp(MaterialApp(debugShowCheckedModeBanner: false, home: Login()));
 }
 
 class MyApp extends StatelessWidget {
