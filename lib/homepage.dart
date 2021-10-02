@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:humac/bluetooth.dart';
+import 'package:humac/zoom_meeting.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:system_settings/system_settings.dart';
 import 'lablespage.dart';
@@ -16,7 +17,6 @@ class HomePage extends StatefulWidget {
 String url = "us.zoom.videomeetings";
 
 class _HomePageState extends State<HomePage> {
-
 
   @override
   Widget build(BuildContext context) {
@@ -158,12 +158,16 @@ class _HomePageState extends State<HomePage> {
                           color: Colors.amber,
                           child: InkWell(
                             //splashColor: Colors.amberAccent,
-                            onTap: () async {
-                              await LaunchApp.openApp(
-                                androidPackageName: url,
-                                openStore: false
-                              );
-                            },
+                            onTap: ()
+                              {
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=> zoom_meeting()));
+                              },
+                            // async {
+                            //   await LaunchApp.openApp(
+                            //     androidPackageName: url,
+                            //     openStore: false
+                            //   );
+                            // };
                             child: SizedBox(
                                 width: 65,
                                 height: 65,
