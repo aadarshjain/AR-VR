@@ -35,22 +35,27 @@ class _zoom_meetingState extends State<zoom_meeting> {
               SizedBox(
                 height: 216.0,
               ),
-                MaterialButton(
+                Container(
+                  width: 250,
+                  height: 50,
                   color: Colors.amber,
-                  onPressed: () {},
-                  minWidth: 250.0,
-                  //splashColor: Colors.red[800],
-                  //color: Colors.red,
-                  padding: EdgeInsets.symmetric(
-                    vertical: 20.0,
-                  ),
+                  child : InkWell(
 
-                  child: Text(
-                    "Aakash Shelke",
-                    style: TextStyle(
-                      fontSize: 14.0,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
+                    onTap: ()
+                    async {
+                      await LaunchApp.openApp(
+                          androidPackageName: url,
+                          openStore: false
+                      );
+                    },
+                    child: Text(
+                      "Aakash Shelke",
+                      style: TextStyle(
+
+                        fontSize: 14.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
                     ),
                   ),
                 ),
