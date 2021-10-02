@@ -5,12 +5,15 @@ import 'package:humac/bluetooth.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:system_settings/system_settings.dart';
 import 'lablespage.dart';
+import 'package:external_app_launcher/external_app_launcher.dart';
 
 class HomePage extends StatefulWidget {
   //final String title;
   @override
   _HomePageState createState() => _HomePageState();
 }
+
+String url = "us.zoom.videomeetings";
 
 class _HomePageState extends State<HomePage> {
 
@@ -136,6 +139,36 @@ class _HomePageState extends State<HomePage> {
                                 height: 65,
                                 child: Icon(
                                   Icons.bluetooth,
+                                  color: Colors.black,
+                                )),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  SizedBox(
+                    height: 25.0,
+                  ),
+                  Container(
+                    child: Align(
+                      alignment: Alignment(0.55, 0.0),
+                      child: ClipOval(
+                        child: Material(
+                          color: Colors.amber,
+                          child: InkWell(
+                            //splashColor: Colors.amberAccent,
+                            onTap: () async {
+                              await LaunchApp.openApp(
+                                androidPackageName: url,
+                                openStore: false
+                              );
+                            },
+                            child: SizedBox(
+                                width: 65,
+                                height: 65,
+                                child: Icon(
+                                  Icons.voice_chat,
                                   color: Colors.black,
                                 )),
                           ),
